@@ -13,3 +13,10 @@
 # ActiveSupport::Inflector.inflections do |inflect|
 #   inflect.acronym 'RESTful'
 # end
+ActiveSupport::Inflector.inflections do |inflect|
+
+  inflect.irregular('juzgado', 'juzgados')
+  inflect.irregular('ciudad', 'ciudades')
+  inflect.irregular('usuario', 'usuarios')
+
+end
