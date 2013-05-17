@@ -3,3 +3,9 @@
 <h3>Solo Personal Autorizado</h3>
 <h4>Este sitio es propiedad de EHMSOFTWARE S.A.S</h4>
 <h4>Abandone esta página si usted no está autorizado para entrar</h4>
+
+<% if usuario_signed_in? %>
+	<%= link_to "Salir", destroy_usuario_session_path, method: :delete %>
+<% else %>
+	<%= link_to "Iniciar Sesión", new_usuario_session_path %>
+<% end %>
