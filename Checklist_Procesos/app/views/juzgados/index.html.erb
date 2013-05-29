@@ -1,0 +1,27 @@
+<h1>Lista de Juzgados</h1>
+
+<table>
+  <tr>
+    <th>Nombre</th>
+    <th>Dirección</th>
+    <th>Ciudad</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @juzgados.each do |juzgado| %>
+  <tr>
+    <td><%= juzgado.nombre %></td>
+    <td><%= juzgado.direccion %></td>
+    <td><%= juzgado.ciudad.nombre %></td>
+    <td><%= link_to 'Ver', juzgado %></td>
+    <td><%= link_to 'Editar', edit_juzgado_path(juzgado) %></td>
+    <td><%= link_to 'Eliminar', juzgado, method: :delete, data: { confirm: '¿Seguro que va a borar el juzgado?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Nuevo Juzgado', new_juzgado_path %>

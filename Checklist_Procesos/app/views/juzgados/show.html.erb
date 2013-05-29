@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Nombre:</b>
+  <%= @juzgado.nombre %>
+</p>
+
+<p>
+  <b>Dirección:</b>
+  <%= @juzgado.direccion %>
+</p>
+
+<p>
+  <b>Ciudad:</b>
+  <%= @juzgado.ciudad.nombre %>
+</p>
+
+
+<%= link_to 'Editar', edit_juzgado_path(@juzgado) %> |
+<%= link_to 'Regresar', juzgados_path %>

@@ -18,5 +18,8 @@ ActiveSupport::Inflector.inflections do |inflect|
   inflect.irregular('juzgado', 'juzgados')
   inflect.irregular('ciudad', 'ciudades')
   inflect.irregular('usuario', 'usuarios')
-
+  inflect.irregular('ronda', 'rondas')
+  inflect.irregular('visita', 'visitas')
+  inflect.irregular('diaria', 'diarias')
+  inflect.irregular('error', 'errores')
 end

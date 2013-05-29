@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130528205523) do
+ActiveRecord::Schema.define(:version => 20130529215209) do
 
   create_table "ciudades", :force => true do |t|
     t.string   "nombre"
@@ -19,6 +19,16 @@ ActiveRecord::Schema.define(:version => 20130528205523) do
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
   end
+
+  create_table "juzgados", :force => true do |t|
+    t.string   "nombre"
+    t.string   "direccion"
+    t.integer  "ciudad_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "juzgados", ["ciudad_id"], :name => "index_juzgados_on_ciudad_id"
 
   create_table "usuarios", :force => true do |t|
     t.string   "email",                  :default => "", :null => false

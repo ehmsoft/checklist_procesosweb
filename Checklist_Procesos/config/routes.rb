@@ -1,4 +1,7 @@
 ChecklistProcesos::Application.routes.draw do
+  resources :juzgados
+
+
   resources :ciudades
 
 
