@@ -1,4 +1,7 @@
 ChecklistProcesos::Application.routes.draw do
+  resources :ciudades
+
+
   devise_for :usuarios
 
   get "inicio/index"
