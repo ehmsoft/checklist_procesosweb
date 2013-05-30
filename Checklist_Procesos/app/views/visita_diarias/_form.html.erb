@@ -1,0 +1,53 @@
+<%= form_for(@visita_diaria) do |f| %>
+  <% if @visita_diaria.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@visita_diaria.errors.count, "error") %> evitó que la visita se guardara:</h2>
+
+      <ul>
+      <% @visita_diaria.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :juzgado %><br />
+    <%= grouped_collection_select(:visita_diaria,:juzgado_id, Ciudad.all, :juzgados, :nombre, :id, :nombre_completo) %>
+  </div>
+  <div class="field">
+    <%= f.label :estados %><br />
+    <%= f.check_box :estados %>
+  </div>
+  <div class="field">
+    <%= f.label :n_estados %><br />
+    <%= f.number_field :n_estados %>
+  </div>
+  <div class="field">
+    <%= f.label :edictos %><br />
+    <%= f.check_box :edictos %>
+  </div>
+  <div class="field">
+    <%= f.label :n_edictos %><br />
+    <%= f.number_field :n_edictos %>
+  </div>
+  <div class="field">
+    <%= f.label :traslados %><br />
+    <%= f.check_box :traslados %>
+  </div>
+  <div class="field">
+    <%= f.label :n_traslados %><br />
+    <%= f.number_field :n_traslados %>
+  </div>
+  <div class="field">
+    <%= f.label :nada %><br />
+    <%= f.check_box :nada %>
+  </div>
+  <div class="field">
+    <%= f.label :fecha %><br />
+    <%= f.date_select :fecha %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Aceptar" %>
+  </div>
+<% end %>

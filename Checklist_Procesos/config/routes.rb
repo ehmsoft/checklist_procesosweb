@@ -1,4 +1,7 @@
 ChecklistProcesos::Application.routes.draw do
+  resources :visita_diarias
+
+
   resources :rondas
 
 

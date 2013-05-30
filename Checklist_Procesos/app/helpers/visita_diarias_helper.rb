@@ -1,0 +1,2 @@
+module VisitaDiariasHelper
+end

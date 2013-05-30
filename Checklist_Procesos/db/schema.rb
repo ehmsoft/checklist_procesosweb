@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130530012543) do
+ActiveRecord::Schema.define(:version => 20130530013930) do
 
   create_table "ciudades", :force => true do |t|
     t.string   "nombre"
@@ -56,5 +56,23 @@ ActiveRecord::Schema.define(:version => 20130530012543) do
 
   add_index "usuarios", ["email"], :name => "index_usuarios_on_email", :unique => true
   add_index "usuarios", ["reset_password_token"], :name => "index_usuarios_on_reset_password_token", :unique => true
+
+  create_table "visita_diarias", :force => true do |t|
+    t.integer  "juzgado_id"
+    t.boolean  "estados",     :default => false
+    t.integer  "n_estados",   :default => 0
+    t.boolean  "edictos",     :default => false
+    t.integer  "n_edictos",   :default => 0
+    t.boolean  "traslados",   :default => false
+    t.integer  "n_traslados", :default => 0
+    t.boolean  "nada",        :default => false
+    t.integer  "ronda_id"
+    t.date     "fecha"
+    t.datetime "created_at",                     :null => false
+    t.datetime "updated_at",                     :null => false
+  end
+
+  add_index "visita_diarias", ["juzgado_id"], :name => "index_visita_diarias_on_juzgado_id"
+  add_index "visita_diarias", ["ronda_id"], :name => "index_visita_diarias_on_ronda_id"
 
 end

@@ -1,0 +1,50 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Juzgado:</b>
+  <%= @visita_diaria.juzgado.nombre_completo %>
+</p>
+
+<p>
+  <b>Estados:</b>
+  <%= @visita_diaria.estados %>
+</p>
+
+<p>
+  <b>N estados:</b>
+  <%= @visita_diaria.n_estados %>
+</p>
+
+<p>
+  <b>Edictos:</b>
+  <%= @visita_diaria.edictos %>
+</p>
+
+<p>
+  <b>N edictos:</b>
+  <%= @visita_diaria.n_edictos %>
+</p>
+
+<p>
+  <b>Traslados:</b>
+  <%= @visita_diaria.traslados %>
+</p>
+
+<p>
+  <b>N traslados:</b>
+  <%= @visita_diaria.n_traslados %>
+</p>
+
+<p>
+  <b>Nada:</b>
+  <%= @visita_diaria.nada %>
+</p>
+
+<p>
+  <b>Fecha:</b>
+  <%= @visita_diaria.fecha %>
+</p>
+
+
+<%= link_to 'Editar', edit_visita_diaria_path(@visita_diaria) %> |
+<%= link_to 'Regresar', visita_diarias_path %>

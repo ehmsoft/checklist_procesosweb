@@ -1,5 +1,6 @@
 class Juzgado < ActiveRecord::Base
   belongs_to :ciudad
+  has_many :visita_diarias
   attr_accessible :direccion, :nombre, :ciudad_id
   validates :nombre, presence: {message: "No puede estar en blanco" } #Solo es obligatorio el nombre.
   validates :ciudad_id, presence: {message: "Debe escoger una" }

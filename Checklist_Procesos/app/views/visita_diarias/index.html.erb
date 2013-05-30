@@ -1,0 +1,39 @@
+<h1>Lista de Visitas</h1>
+
+<table>
+  <tr>
+    <th>Juzgado</th>
+    <th>Estados</th>
+    <th>N estados</th>
+    <th>Edictos</th>
+    <th>N edictos</th>
+    <th>Traslados</th>
+    <th>N traslados</th>
+    <th>Nada</th>
+    <th>Fecha</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @visita_diarias.each do |visita_diaria| %>
+  <tr>
+    <td><%= visita_diaria.juzgado.nombre %></td>
+    <td><%= visita_diaria.estados %></td>
+    <td><%= visita_diaria.n_estados %></td>
+    <td><%= visita_diaria.edictos %></td>
+    <td><%= visita_diaria.n_edictos %></td>
+    <td><%= visita_diaria.traslados %></td>
+    <td><%= visita_diaria.n_traslados %></td>
+    <td><%= visita_diaria.nada %></td>
+    <td><%= visita_diaria.fecha %></td>
+    <td><%= link_to 'Ver', visita_diaria %></td>
+    <td><%= link_to 'Editar', edit_visita_diaria_path(visita_diaria) %></td>
+    <td><%= link_to 'Eliminar', visita_diaria, method: :delete, data: { confirm: '¿Seguro desea eliminar la visita?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Nueva Visita diaria', new_visita_diaria_path %>
