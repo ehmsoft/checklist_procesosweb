@@ -1,0 +1,21 @@
+<%= form_for(@ronda) do |f| %>
+  <% if @ronda.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@ronda.errors.count, "error") %> evitó que se guardara la ronda:</h2>
+
+      <ul>
+      <% @ronda.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :fecha %><br />
+    <%= f.date_select :fecha %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Aceptar" %>
+  </div>
+<% end %>
