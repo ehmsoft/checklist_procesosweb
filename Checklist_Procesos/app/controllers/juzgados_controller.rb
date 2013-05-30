@@ -1,4 +1,5 @@
 class JuzgadosController < ApplicationController
+  before_filter :authenticate_usuario!
   # GET /juzgados
   # GET /juzgados.json
   def index
