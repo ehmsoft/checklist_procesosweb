@@ -1,11 +1,15 @@
-<h2>Iniciar sesión</h2>
+<% provide :header_title, "Iniciar Sesión"%>
 
 <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, :autofocus => true %></div>
+  <div data-role="fieldcontain" class="ui-hide-label">
+  	<%= f.label :email %><br />
+  	<%= f.email_field :email, autofocus: true, placeholder: "Email" %>
+  </div>
 
-  <div><%= f.label :password %><br />
-  <%= f.password_field :password %></div>
+  <div data-role="fieldcontain" class="ui-hide-label">
+  	<%= f.label :password %><br />
+  	<%= f.password_field :password, placeholder: "Password" %>
+  </div>
 
   <% if devise_mapping.rememberable? -%>
     <div><%= f.check_box :remember_me %> <%= f.label :remember_me, "Recordarme" %></div>
