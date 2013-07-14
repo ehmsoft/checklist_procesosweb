@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <p>
   <b>Fecha:</b>
   <%= @ronda.fecha %>
@@ -9,7 +7,13 @@
   <b>Usuario:</b>
   <%= @ronda.usuario.email %>
 </p>
+<hr />
+<h3>Visitas</h3>
+<% @ronda.visita_diarias.each do |v| %>
+	<%= v.juzgado.nombre %><br />
+<% end %>
 
+<%= link_to 'Nueva Visita', new_ronda_visita_diaria_path(@ronda) %>
 
 <%= link_to 'Editar', edit_ronda_path(@ronda) %> |
 <%= link_to 'Regresar', rondas_path %>

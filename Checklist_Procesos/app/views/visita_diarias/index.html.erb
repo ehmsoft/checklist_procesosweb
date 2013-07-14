@@ -27,13 +27,13 @@
     <td><%= visita_diaria.n_traslados %></td>
     <td><%= visita_diaria.nada %></td>
     <td><%= visita_diaria.fecha %></td>
-    <td><%= link_to 'Ver', visita_diaria %></td>
-    <td><%= link_to 'Editar', edit_visita_diaria_path(visita_diaria) %></td>
-    <td><%= link_to 'Eliminar', visita_diaria, method: :delete, data: { confirm: '¿Seguro desea eliminar la visita?' } %></td>
+    <td><%= link_to 'Ver', ronda_visita_diaria_path(@ronda, visita_diaria) %></td>
+    <td><%= link_to 'Editar', edit_ronda_visita_diaria_path(@ronda, visita_diaria) %></td>
+    <td><%= link_to 'Eliminar', ronda_visita_diaria_path(@ronda, visita_diaria), method: :delete, data: { confirm: '¿Seguro desea eliminar la visita?' } %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'Nueva Visita diaria', new_visita_diaria_path %>
+<%= link_to 'Nueva Visita diaria', new_ronda_visita_diaria_path(@ronda) %>

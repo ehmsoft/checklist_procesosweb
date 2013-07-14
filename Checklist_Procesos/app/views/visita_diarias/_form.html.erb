@@ -1,4 +1,4 @@
-<%= form_for(@visita_diaria) do |f| %>
+<%= form_for([@ronda, @visita_diaria]) do |f| %>
   <% if @visita_diaria.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@visita_diaria.errors.count, "error") %> evitó que la visita se guardara:</h2>

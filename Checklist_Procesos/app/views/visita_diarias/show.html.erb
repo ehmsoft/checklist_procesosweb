@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <p>
   <b>Juzgado:</b>
   <%= @visita_diaria.juzgado.nombre_completo %>
@@ -46,5 +44,5 @@
 </p>
 
 
-<%= link_to 'Editar', edit_visita_diaria_path(@visita_diaria) %> |
-<%= link_to 'Regresar', visita_diarias_path %>
+<%= link_to 'Editar', edit_ronda_visita_diaria_path(@visita_diaria.ronda, @visita_diaria) %> |
+<%= link_to 'Regresar', ronda_visita_diarias_path(@visita_diaria.ronda) %>

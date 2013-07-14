@@ -1,9 +1,10 @@
 class VisitaDiariasController < ApplicationController
   before_filter :authenticate_usuario!
-  # GET /visita_diarias
-  # GET /visita_diarias.json
+  # GET /rondas/1/visita_diarias
+  # GET /rondas/1/visita_diarias.json
   def index
-    @visita_diarias = VisitaDiaria.all
+    @ronda = Ronda.find(params[:ronda_id])
+    @visita_diarias = @ronda.visita_diarias.all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -11,9 +12,10 @@ class VisitaDiariasController < ApplicationController
     end
   end
 
-  # GET /visita_diarias/1
-  # GET /visita_diarias/1.json
+  # GET /ronda/1/visita_diarias/1
+  # GET /ronda/1/visita_diarias/1.json
   def show
+    @ronda = Ronda.find(params[:ronda_id])
     @visita_diaria = VisitaDiaria.find(params[:id])
 
     respond_to do |format|
@@ -22,10 +24,11 @@ class VisitaDiariasController < ApplicationController
     end
   end
 
-  # GET /visita_diarias/new
-  # GET /visita_diarias/new.json
+  # GET /ronda/1/visita_diarias/new
+  # GET /ronda/1/visita_diarias/new.json
   def new
-    @visita_diaria = VisitaDiaria.new
+    @ronda = Ronda.find(params[:ronda_id])
+    @visita_diaria = @ronda.visita_diarias.build
 
     respond_to do |format|
       format.html # new.html.erb
@@ -33,19 +36,21 @@ class VisitaDiariasController < ApplicationController
     end
   end
 
-  # GET /visita_diarias/1/edit
+  # GET /ronda/1/visita_diarias/1/edit
   def edit
+    @ronda = Ronda.find(params[:ronda_id])
     @visita_diaria = VisitaDiaria.find(params[:id])
   end
 
-  # POST /visita_diarias
-  # POST /visita_diarias.json
+  # POST /ronda/1/visita_diarias
+  # POST /ronda/1/visita_diarias.json
   def create
-    @visita_diaria = VisitaDiaria.new(params[:visita_diaria])
+    @ronda = Ronda.find(params[:ronda_id])
+    @visita_diaria = @ronda.visita_diarias.build(params[:visita_diaria])
 
     respond_to do |format|
       if @visita_diaria.save
-        format.html { redirect_to @visita_diaria, notice: 'Visita diaria fue creada correctamente.' }
+        format.html { redirect_to ronda_path(@ronda), notice: 'Visita diaria fue creada correctamente.' }
         format.json { render json: @visita_diaria, status: :created, location: @visita_diaria }
       else
         format.html { render action: "new" }
@@ -54,14 +59,15 @@ class VisitaDiariasController < ApplicationController
     end
   end
 
-  # PUT /visita_diarias/1
-  # PUT /visita_diarias/1.json
+  # PUT /ronda/1/visita_diarias/1
+  # PUT /ronda/1/visita_diarias/1.json
   def update
+    @ronda = Ronda.find(params[:ronda_id])
     @visita_diaria = VisitaDiaria.find(params[:id])
 
     respond_to do |format|
       if @visita_diaria.update_attributes(params[:visita_diaria])
-        format.html { redirect_to @visita_diaria, notice: 'Visita diaria fue actualizada correctamente.' }
+        format.html { redirect_to ronda_path(@ronda), notice: 'Visita diaria fue actualizada correctamente.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -70,8 +76,8 @@ class VisitaDiariasController < ApplicationController
     end
   end
 
-  # DELETE /visita_diarias/1
-  # DELETE /visita_diarias/1.json
+  # DELETE /ronda/1/visita_diarias/1
+  # DELETE /ronda/1/visita_diarias/1.json
   def destroy
     @visita_diaria = VisitaDiaria.find(params[:id])
     @visita_diaria.destroy
