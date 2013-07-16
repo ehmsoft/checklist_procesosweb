@@ -6,9 +6,7 @@ class Juzgado < ActiveRecord::Base
   validates :ciudad_id, presence: {message: "Debe escoger una" }
   
   def nombre_completo #Me devuelve el nombre completo del juzgado para evitar hacer interpolacion de strings en otros lados.
-    if id == 1
-      nombre 
-    elsif nombre == "Tribunal Contencioso Administrativo de Risaralda"
+    if nombre == "Tribunal Contencioso Administrativo de Risaralda"
       nombre
     else
       "#{nombre} de #{ciudad.nombre}"

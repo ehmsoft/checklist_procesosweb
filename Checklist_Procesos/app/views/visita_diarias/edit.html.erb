@@ -1,6 +1,6 @@
-<h1>Editar Visita</h1>
+<% provide :header_left, link_to('Atrás', ronda_visita_diarias_path) %>
+<% provide :header_title, "Editar Visita Diaria"%>
+<% provide :header_right, link_to('Ver', ronda_visita_diaria_path(@ronda, @visita_diaria)) %>
 
 <%= render 'form' %>
 
-<%= link_to 'Ver', ronda_visita_diaria_path(@ronda, @visita_diaria) %> |
-<%= link_to 'Regresar', ronda_visita_diarias_path %>

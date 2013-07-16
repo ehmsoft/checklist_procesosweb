@@ -1,5 +1,5 @@
-<h1>Nueva Ciudad</h1>
+<% provide :header_left, link_to('Atrás', ciudades_path) %>
+<% provide :header_title, "Agregar Ciudad"%>
 
 <%= render 'form' %>
 
-<%= link_to 'Regresar', ciudades_path %>

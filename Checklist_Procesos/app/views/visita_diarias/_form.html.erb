@@ -11,41 +11,43 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :juzgado %><br />
+  <div data-role="fieldcontain">
+    <%= f.label :juzgado_id, class: :select %>
     <%= grouped_collection_select(:visita_diaria,:juzgado_id, Ciudad.all, :juzgados, :nombre, :id, :nombre_completo) %>
   </div>
-  <div class="field">
+  <div data-role="fieldcontain">
     <%= f.label :estados %><br />
     <%= f.check_box :estados %>
   </div>
-  <div class="field">
+  <div data-role="fieldcontain" >
     <%= f.label :n_estados %><br />
-    <%= f.number_field :n_estados %>
+    <%= f.range_field :n_estados, in: 0..50 %>
   </div>
-  <div class="field">
+  <div data-role="fieldcontain">
     <%= f.label :edictos %><br />
     <%= f.check_box :edictos %>
   </div>
-  <div class="field">
+  <div data-role="fieldcontain">
     <%= f.label :n_edictos %><br />
-    <%= f.number_field :n_edictos %>
+    <%= f.range_field :n_edictos, in: 0..50 %>
   </div>
-  <div class="field">
+  <div data-role="fieldcontain">
     <%= f.label :traslados %><br />
     <%= f.check_box :traslados %>
   </div>
-  <div class="field">
+  <div data-role="fieldcontain">
     <%= f.label :n_traslados %><br />
-    <%= f.number_field :n_traslados %>
+    <%= f.range_field :n_traslados, in: 0..50 %>
   </div>
-  <div class="field">
+  <div data-role="fieldcontain">
     <%= f.label :nada %><br />
     <%= f.check_box :nada %>
   </div>
-  <div class="field">
-    <%= f.label :fecha %><br />
-    <%= f.date_select :fecha %>
+  <div data-role="fieldcontain" >
+  	<fieldset data-role="controlgroup" data-type="horizontal">
+    	<legend >Fecha</legend>
+    	<%= f.date_select :fecha %>
+    </fieldset>
   </div>
   <div class="actions">
     <%= f.submit "Aceptar" %>

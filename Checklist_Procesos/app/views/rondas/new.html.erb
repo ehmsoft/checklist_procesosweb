@@ -1,5 +1,5 @@
-<h1>Nueva ronda</h1>
+<% provide :header_left, link_to('Atrás', rondas_path) %>
+<% provide :header_title, "Agregar Ronda"%>
 
 <%= render 'form' %>
 
-<%= link_to 'Regresar', rondas_path %>

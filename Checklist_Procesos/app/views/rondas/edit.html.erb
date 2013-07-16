@@ -1,6 +1,6 @@
-<h1>Editar ronda</h1>
+<% provide :header_left, link_to('Atrás', rondas_path) %>
+<% provide :header_title, "Editar Ronda"%>
+<% provide :header_right, link_to('Ver', @ronda) %>
 
 <%= render 'form' %>
 
-<%= link_to 'Ver', @ronda %> |
-<%= link_to 'Regresar', rondas_path %>

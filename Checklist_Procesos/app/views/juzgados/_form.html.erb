@@ -11,16 +11,16 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div data-role="fieldcontain" class="ui-hide-label">
     <%= f.label :nombre %><br />
-    <%= f.text_field :nombre %>
+    <%= f.text_field :nombre, placeholder: "Nombre" %>
   </div>
-  <div class="field">
+  <div data-role="fieldcontain" class="ui-hide-label">
     <%= f.label :direccion, "Dirección" %><br />
-    <%= f.text_field :direccion %>
+    <%= f.text_field :direccion, placeholder: "Dirección" %>
   </div>
-  <div class="field">
-  	<%= f.label :ciudad %>
+  <div data-role="fieldcontain">
+  	<%= f.label :ciudad_id, class: :select %>
  	<%= collection_select(:juzgado, :ciudad_id, Ciudad.all, :id, :nombre) %>
   </div>
   <div class="actions">

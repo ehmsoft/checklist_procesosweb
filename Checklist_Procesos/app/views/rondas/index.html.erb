@@ -1,4 +1,6 @@
 <% provide :header_title, "Rondas" %>
+<% provide :header_right, link_to('Agregar', new_ronda_path, "data-icon" => :plus, class: "ui-btn-right") %>
+
 <table>
   <tr>
     <th>Fecha</th>
@@ -21,4 +23,3 @@
 
 <br />
 
-<%= link_to 'Nueva Ronda', new_ronda_path %>

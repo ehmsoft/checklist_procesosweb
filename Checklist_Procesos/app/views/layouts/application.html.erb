@@ -12,14 +12,16 @@
 <body>
 	<div data-role="page" >
 		<div data-role="header">
+			<%= yield :header_left %>
 			<h1><%= yield :header_title %></h1>
+			<%= yield :header_right %>
 		</div>
 		<p class="notice"><%= notice %></p>
 		<p class="alert"><%= alert %></p>
 		
 		<%= yield %>
 		
-		<div data-role="footer">
+		<div data-role="footer" data-position="fixed">
 			<% if usuario_signed_in? %>
 				<div data-role="navbar">
 					<ul>

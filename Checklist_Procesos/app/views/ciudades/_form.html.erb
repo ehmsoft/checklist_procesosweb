@@ -11,14 +11,15 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div data-role="fieldcontain" class="ui-hide-label">
     <%= f.label :nombre %><br />
-    <%= f.text_field :nombre %>
+    <%= f.text_field :nombre, placeholder: "Nombre" %>
   </div>
-  <div class="field">
+  <div data-role="fieldcontain" class="ui-hide-label">
     <%= f.label :departamento %><br />
-    <%= f.text_field :departamento %>
+    <%= f.text_field :departamento, placeholder: "Departamento" %>
   </div>
+  
   <div class="actions">
     <%= f.submit "Aceptar" %>
   </div>

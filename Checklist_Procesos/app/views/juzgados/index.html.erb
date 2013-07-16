@@ -1,4 +1,6 @@
 <% provide :header_title, "Juzgados" %>
+<% provide :header_right, link_to('Agregar', new_juzgado_path, "data-icon" => :plus, class: "ui-btn-right") %>
+
 <table>
   <tr>
     <th>Nombre</th>
@@ -23,4 +25,3 @@
 
 <br />
 
-<%= link_to 'Nuevo Juzgado', new_juzgado_path %>

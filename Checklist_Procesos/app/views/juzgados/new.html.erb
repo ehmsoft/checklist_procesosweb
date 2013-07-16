@@ -1,5 +1,5 @@
-<h1>Nuevo juzgado</h1>
+<% provide :header_left, link_to('Atrás', juzgados_path) %>
+<% provide :header_title, "Agregar Juzgado"%>
 
 <%= render 'form' %>
 
-<%= link_to 'Regresar', juzgados_path %>

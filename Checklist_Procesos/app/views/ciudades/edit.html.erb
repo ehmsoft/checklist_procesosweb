@@ -1,6 +1,5 @@
-<h1>Editar ciudad</h1>
+<% provide :header_left, link_to('Atrás', ciudades_path) %>
+<% provide :header_title, "Editar Ciudad"%>
+<% provide :header_right, link_to('Ver', @ciudad) %>
 
 <%= render 'form' %>
-
-<%= link_to 'Ver', @ciudad %> |
-<%= link_to 'Regresar', ciudades_path %>

@@ -1,4 +1,6 @@
 <% provide :header_title, "Visitas" %>
+<% provide :header_right, link_to('Agregar',  new_ronda_visita_diaria_path(@ronda), "data-icon" => :plus, class: "ui-btn-right") %>
+
 
 <table>
   <tr>
@@ -36,4 +38,3 @@
 
 <br />
 
-<%= link_to 'Nueva Visita diaria', new_ronda_visita_diaria_path(@ronda) %>
