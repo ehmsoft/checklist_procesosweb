@@ -4,3 +4,5 @@
 
 <%= render 'form' %>
 
+<%= link_to 'Eliminar', ronda_visita_diaria_path(@ronda, @visita_diaria), method: :delete, "data-role" => :button, "data-icon" => :delete, data: { confirm: '¿Seguro desea eliminar la visita?' } %>
+

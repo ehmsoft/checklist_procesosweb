@@ -79,11 +79,12 @@ class VisitaDiariasController < ApplicationController
   # DELETE /ronda/1/visita_diarias/1
   # DELETE /ronda/1/visita_diarias/1.json
   def destroy
+    @ronda = Ronda.find(params[:ronda_id])
     @visita_diaria = VisitaDiaria.find(params[:id])
     @visita_diaria.destroy
 
     respond_to do |format|
-      format.html { redirect_to visita_diarias_url }
+      format.html { redirect_to ronda_path(@ronda) }
       format.json { head :no_content }
     end
   end

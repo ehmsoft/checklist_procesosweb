@@ -1,40 +1,10 @@
+<% provide :header_left, link_to('Atrás', ronda_path(@ronda)) %>
 <% provide :header_title, "Visitas" %>
 <% provide :header_right, link_to('Agregar',  new_ronda_visita_diaria_path(@ronda), "data-icon" => :plus, class: "ui-btn-right") %>
 
-
-<table>
-  <tr>
-    <th>Juzgado</th>
-    <th>Estados</th>
-    <th>N estados</th>
-    <th>Edictos</th>
-    <th>N edictos</th>
-    <th>Traslados</th>
-    <th>N traslados</th>
-    <th>Nada</th>
-    <th>Fecha</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
+<ul data-role="listview" data-inset="true" >
 <% @visita_diarias.each do |visita_diaria| %>
-  <tr>
-    <td><%= visita_diaria.juzgado.nombre %></td>
-    <td><%= visita_diaria.estados %></td>
-    <td><%= visita_diaria.n_estados %></td>
-    <td><%= visita_diaria.edictos %></td>
-    <td><%= visita_diaria.n_edictos %></td>
-    <td><%= visita_diaria.traslados %></td>
-    <td><%= visita_diaria.n_traslados %></td>
-    <td><%= visita_diaria.nada %></td>
-    <td><%= visita_diaria.fecha %></td>
-    <td><%= link_to 'Ver', ronda_visita_diaria_path(@ronda, visita_diaria) %></td>
-    <td><%= link_to 'Editar', edit_ronda_visita_diaria_path(@ronda, visita_diaria) %></td>
-    <td><%= link_to 'Eliminar', ronda_visita_diaria_path(@ronda, visita_diaria), method: :delete, data: { confirm: '¿Seguro desea eliminar la visita?' } %></td>
-  </tr>
+	<li><%= link_to visita_diaria.juzgado.nombre_completo, ronda_visita_diaria_path(@ronda, visita_diaria) %></li>
 <% end %>
-</table>
-
-<br />
+</ul>
 
