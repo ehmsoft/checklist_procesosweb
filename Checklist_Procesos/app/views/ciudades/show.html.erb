@@ -1,13 +1,16 @@
-<p>
-  <b>Nombre:</b>
-  <%= @ciudad.nombre %>
-</p>
+<% provide :header_left, link_to('Atrás', ciudades_path) %>
+<% provide :header_title, "Ver Ciudad"%>
+<% provide :header_right, link_to('Editar', edit_ciudad_path(@ciudad)) %>
+<ul data-role="listview" data-inset="true">
+	<li>
+	  <b>Nombre:</b>
+	  <%= @ciudad.nombre %>
+	</li>
+	
+	<li>
+	  <b>Departamento:</b>
+	  <%= @ciudad.departamento %>
+	</li>
+</ul>
 
-<p>
-  <b>Departamento:</b>
-  <%= @ciudad.departamento %>
-</p>
 
-
-<%= link_to 'Editar', edit_ciudad_path(@ciudad) %> |
-<%= link_to 'Regresar', ciudades_path %>

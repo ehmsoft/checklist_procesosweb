@@ -3,3 +3,5 @@
 <% provide :header_right, link_to('Ver', @ciudad) %>
 
 <%= render 'form' %>
+
+<%= link_to 'Eliminar', @ciudad, method: :delete, "data-role" => :button, "data-icon" => :delete, data: { confirm: '¿Segurito segurito?' } %>

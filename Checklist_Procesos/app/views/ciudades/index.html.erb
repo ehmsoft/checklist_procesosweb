@@ -1,25 +1,11 @@
 <% provide :header_title, "Ciudades" %>
 <% provide :header_right, link_to('Agregar', new_ciudad_path, "data-icon" => :plus, class: "ui-btn-right") %>
-<table>
-  <tr>
-    <th>Nombre</th>
-    <th>Departamento</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
 
+<ul data-role="listview">
 <% @ciudades.each do |ciudad| %>
-  <tr>
-    <td><%= ciudad.nombre %></td>
-    <td><%= ciudad.departamento %></td>
-    <td><%= link_to 'Ver', ciudad %></td>
-    <td><%= link_to 'Editar', edit_ciudad_path(ciudad) %></td>
-    <td><%= link_to 'Eliminar', ciudad, method: :delete, data: { confirm: '¿Segurito segurito?' } %></td>
-  </tr>
+    <li><%= link_to "#{ciudad.nombre}, #{ciudad.departamento}", ciudad %></li>
 <% end %>
-</table>
+</ul>
 
-<br />
 
 
