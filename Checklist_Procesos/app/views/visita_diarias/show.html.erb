@@ -8,18 +8,8 @@
 	</li>
 	
 	<li>
-	  <b>Estados:</b>
-	  <%= @visita_diaria.estados %>
-	</li>
-	
-	<li>
 	  <b>N estados:</b>
 	  <%= @visita_diaria.n_estados %>
-	</li>
-	
-	<li>
-	  <b>Edictos:</b>
-	  <%= @visita_diaria.edictos %>
 	</li>
 	
 	<li>
@@ -28,20 +18,22 @@
 	</li>
 	
 	<li>
-	  <b>Traslados:</b>
-	  <%= @visita_diaria.traslados %>
-	</li>
-	
-	<li>
 	  <b>N traslados:</b>
 	  <%= @visita_diaria.n_traslados %>
 	</li>
 	
-	<li>
-	  <b>Nada:</b>
-	  <%= @visita_diaria.nada %>
-	</li>
-	
+	<% if @visita_diaria.nada %>
+		<li data-theme="b">
+		  <b>Nada:</b> NO SALIÓ NADA HOY
+		  	
+	<% else %>
+		<li>
+	  		<b>Nada:</b>
+		  	<%= @visita_diaria.nada %>
+		  	
+		  
+	<% end %>
+		</li>
 	<li>
 	  <b>Fecha:</b>
 	  <%= @visita_diaria.fecha %>
