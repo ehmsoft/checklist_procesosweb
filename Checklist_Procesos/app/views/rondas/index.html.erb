@@ -1,25 +1,8 @@
 <% provide :header_title, "Rondas" %>
 <% provide :header_right, link_to('Agregar', new_ronda_path, "data-icon" => :plus, class: "ui-btn-right") %>
 
-<table>
-  <tr>
-    <th>Fecha</th>
-    <th>Usuario</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
+<ul data-role="listview">
 <% @rondas.each do |ronda| %>
-  <tr>
-    <td><%= ronda.fecha %></td>
-    <td><%= ronda.usuario.email %></td>
-    <td><%= link_to 'Ver', ronda %></td>
-    <td><%= link_to 'Editar', edit_ronda_path(ronda) %></td>
-    <td><%= link_to 'Eliminar', ronda, method: :delete, data: { confirm: '¿Seguro que desea borrar la ronda?' } %></td>
-  </tr>
+    <li><%= link_to "#{ronda.fecha} por #{ronda.usuario.email}", ronda %></li>
 <% end %>
-</table>
-
-<br />
-
+</ul>

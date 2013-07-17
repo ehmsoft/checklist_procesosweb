@@ -4,3 +4,4 @@
 
 <%= render 'form' %>
 
+<%= link_to 'Eliminar', @ronda, method: :delete, "data-role" => :button, "data-icon" => :delete, data: { confirm: '¿Seguro que desea borrar la ronda?' } %>
