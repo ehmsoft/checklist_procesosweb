@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130530013930) do
+ActiveRecord::Schema.define(:version => 20130718205253) do
 
   create_table "ciudades", :force => true do |t|
     t.string   "nombre"
@@ -70,6 +70,7 @@ ActiveRecord::Schema.define(:version => 20130530013930) do
     t.date     "fecha"
     t.datetime "created_at",                     :null => false
     t.datetime "updated_at",                     :null => false
+    t.text     "notas"
   end
 
   add_index "visita_diarias", ["juzgado_id"], :name => "index_visita_diarias_on_juzgado_id"
