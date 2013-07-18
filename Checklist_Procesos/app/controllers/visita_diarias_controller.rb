@@ -3,6 +3,7 @@ class VisitaDiariasController < ApplicationController
   # GET /rondas/1/visita_diarias
   # GET /rondas/1/visita_diarias.json
   def index
+    seleccionarMenu(:rondas)
     @ronda = Ronda.find(params[:ronda_id])
     @visita_diarias = @ronda.visita_diarias.all
 
@@ -15,6 +16,7 @@ class VisitaDiariasController < ApplicationController
   # GET /ronda/1/visita_diarias/1
   # GET /ronda/1/visita_diarias/1.json
   def show
+    seleccionarMenu(:rondas)
     @ronda = Ronda.find(params[:ronda_id])
     @visita_diaria = VisitaDiaria.find(params[:id])
 
@@ -27,6 +29,7 @@ class VisitaDiariasController < ApplicationController
   # GET /ronda/1/visita_diarias/new
   # GET /ronda/1/visita_diarias/new.json
   def new
+    seleccionarMenu(:rondas)
     @ronda = Ronda.find(params[:ronda_id])
     @visita_diaria = @ronda.visita_diarias.build
 
@@ -38,6 +41,7 @@ class VisitaDiariasController < ApplicationController
 
   # GET /ronda/1/visita_diarias/1/edit
   def edit
+    seleccionarMenu(:rondas)
     @ronda = Ronda.find(params[:ronda_id])
     @visita_diaria = VisitaDiaria.find(params[:id])
   end
@@ -45,6 +49,7 @@ class VisitaDiariasController < ApplicationController
   # POST /ronda/1/visita_diarias
   # POST /ronda/1/visita_diarias.json
   def create
+    seleccionarMenu(:rondas)
     @ronda = Ronda.find(params[:ronda_id])
     @visita_diaria = @ronda.visita_diarias.build(params[:visita_diaria])
 
@@ -62,6 +67,7 @@ class VisitaDiariasController < ApplicationController
   # PUT /ronda/1/visita_diarias/1
   # PUT /ronda/1/visita_diarias/1.json
   def update
+    seleccionarMenu(:rondas)
     @ronda = Ronda.find(params[:ronda_id])
     @visita_diaria = VisitaDiaria.find(params[:id])
 
@@ -79,6 +85,7 @@ class VisitaDiariasController < ApplicationController
   # DELETE /ronda/1/visita_diarias/1
   # DELETE /ronda/1/visita_diarias/1.json
   def destroy
+    seleccionarMenu(:rondas)
     @ronda = Ronda.find(params[:ronda_id])
     @visita_diaria = VisitaDiaria.find(params[:id])
     @visita_diaria.destroy

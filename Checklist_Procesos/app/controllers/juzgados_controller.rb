@@ -3,6 +3,7 @@ class JuzgadosController < ApplicationController
   # GET /juzgados
   # GET /juzgados.json
   def index
+    seleccionarMenu(:juzgados)
     @juzgados = Juzgado.order(:ciudad_id)
 
     respond_to do |format|
@@ -14,6 +15,7 @@ class JuzgadosController < ApplicationController
   # GET /juzgados/1
   # GET /juzgados/1.json
   def show
+    seleccionarMenu(:juzgados)
     @juzgado = Juzgado.find(params[:id])
 
     respond_to do |format|
@@ -25,6 +27,7 @@ class JuzgadosController < ApplicationController
   # GET /juzgados/new
   # GET /juzgados/new.json
   def new
+    seleccionarMenu(:juzgados)
     @juzgado = Juzgado.new
 
     respond_to do |format|
@@ -35,12 +38,14 @@ class JuzgadosController < ApplicationController
 
   # GET /juzgados/1/edit
   def edit
+    seleccionarMenu(:juzgados)
     @juzgado = Juzgado.find(params[:id])
   end
 
   # POST /juzgados
   # POST /juzgados.json
   def create
+    seleccionarMenu(:juzgados)
     @juzgado = Juzgado.new(params[:juzgado])
 
     respond_to do |format|
@@ -57,6 +62,7 @@ class JuzgadosController < ApplicationController
   # PUT /juzgados/1
   # PUT /juzgados/1.json
   def update
+    seleccionarMenu(:juzgados)
     @juzgado = Juzgado.find(params[:id])
 
     respond_to do |format|
@@ -73,6 +79,7 @@ class JuzgadosController < ApplicationController
   # DELETE /juzgados/1
   # DELETE /juzgados/1.json
   def destroy
+    seleccionarMenu(:juzgados)
     @juzgado = Juzgado.find(params[:id])
     @juzgado.destroy
 

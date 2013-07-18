@@ -3,6 +3,7 @@ class RondasController < ApplicationController
   # GET /rondas
   # GET /rondas.json
   def index
+    seleccionarMenu(:rondas)
     @rondas = Ronda.all
 
     respond_to do |format|
@@ -14,6 +15,7 @@ class RondasController < ApplicationController
   # GET /rondas/1
   # GET /rondas/1.json
   def show
+    seleccionarMenu(:rondas)
     @ronda = Ronda.find(params[:id])
 
     respond_to do |format|
@@ -25,6 +27,7 @@ class RondasController < ApplicationController
   # GET /rondas/new
   # GET /rondas/new.json
   def new
+    seleccionarMenu(:rondas)
     @ronda = current_usuario.rondas.build
 
     respond_to do |format|
@@ -35,12 +38,14 @@ class RondasController < ApplicationController
 
   # GET /rondas/1/edit
   def edit
+    seleccionarMenu(:rondas)
     @ronda = Ronda.find(params[:id])
   end
 
   # POST /rondas
   # POST /rondas.json
   def create
+    seleccionarMenu(:rondas)
     @ronda = current_usuario.rondas.build(params[:ronda])
 
     respond_to do |format|
@@ -57,6 +62,7 @@ class RondasController < ApplicationController
   # PUT /rondas/1
   # PUT /rondas/1.json
   def update
+    seleccionarMenu(:rondas)
     @ronda = Ronda.find(params[:id])
 
     respond_to do |format|
@@ -73,6 +79,7 @@ class RondasController < ApplicationController
   # DELETE /rondas/1
   # DELETE /rondas/1.json
   def destroy
+    seleccionarMenu(:rondas)
     @ronda = Ronda.find(params[:id])
     @ronda.destroy
 

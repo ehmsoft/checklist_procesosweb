@@ -3,6 +3,7 @@ class CiudadesController < ApplicationController
   # GET /ciudades
   # GET /ciudades.json
   def index
+    seleccionarMenu(:ciudades)
     @ciudades = Ciudad.all
 
     respond_to do |format|
@@ -14,6 +15,7 @@ class CiudadesController < ApplicationController
   # GET /ciudades/1
   # GET /ciudades/1.json
   def show
+    seleccionarMenu(:ciudades)
     @ciudad = Ciudad.find(params[:id])
 
     respond_to do |format|
@@ -25,6 +27,7 @@ class CiudadesController < ApplicationController
   # GET /ciudades/new
   # GET /ciudades/new.json
   def new
+    seleccionarMenu(:ciudades)
     @ciudad = Ciudad.new
 
     respond_to do |format|
@@ -35,12 +38,14 @@ class CiudadesController < ApplicationController
 
   # GET /ciudades/1/edit
   def edit
+    seleccionarMenu(:ciudades)
     @ciudad = Ciudad.find(params[:id])
   end
 
   # POST /ciudades
   # POST /ciudades.json
   def create
+    seleccionarMenu(:ciudades)
     @ciudad = Ciudad.new(params[:ciudad])
 
     respond_to do |format|
@@ -57,6 +62,7 @@ class CiudadesController < ApplicationController
   # PUT /ciudades/1
   # PUT /ciudades/1.json
   def update
+    seleccionarMenu(:ciudades)
     @ciudad = Ciudad.find(params[:id])
 
     respond_to do |format|
@@ -73,6 +79,7 @@ class CiudadesController < ApplicationController
   # DELETE /ciudades/1
   # DELETE /ciudades/1.json
   def destroy
+    seleccionarMenu(:ciudades)
     @ciudad = Ciudad.find(params[:id])
     @ciudad.destroy
 

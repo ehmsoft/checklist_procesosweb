@@ -25,9 +25,9 @@
 			<% if usuario_signed_in? %>
 				<div data-role="navbar">
 					<ul>
-						<li><%= link_to "Rondas", rondas_path %></li>
-						<li><%= link_to "Juzgados", juzgados_path %></li>
-						<li><%= link_to "Ciudades", ciudades_path %></li>
+						<li><%= link_to "Rondas", rondas_path, class: menuseleccionado == :rondas ? ' ui-btn-active ui-state-persist' : '' %></li>
+						<li><%= link_to "Juzgados", juzgados_path, class: menuseleccionado == :juzgados ? ' ui-btn-active ui-state-persist' : '' %></li>
+						<li><%= link_to "Ciudades", ciudades_path, class: menuseleccionado == :ciudades ? ' ui-btn-active ui-state-persist' : '' %></li>
 						<li><%= link_to "Salir", destroy_usuario_session_path, method: :delete %></li>
 					</ul>
 				</div>
