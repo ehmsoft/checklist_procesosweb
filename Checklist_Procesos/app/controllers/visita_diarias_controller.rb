@@ -55,7 +55,8 @@ class VisitaDiariasController < ApplicationController
 
     respond_to do |format|
       if @visita_diaria.save
-        format.html { redirect_to ronda_path(@ronda), notice: 'Visita diaria fue creada correctamente.' }
+        #format.html { redirect_to ronda_path(@ronda), notice: 'Visita diaria fue creada correctamente.' }
+        format.html { redirect_to new_ronda_visita_diaria_path(@ronda), notice: 'Visita diaria fue creada correctamente.' }
         format.json { render json: @visita_diaria, status: :created, location: @visita_diaria }
       else
         format.html { render action: "new" }
