@@ -17,15 +17,23 @@
   </div>
   <div data-role="fieldcontain" >
     <%= f.label :n_estados, "Estados" %><br />
-    <%= f.range_field :n_estados, in: 0..50 %>
+    <% tope_estados = @visita_diaria.n_estados > 5 ? @visita_diaria.n_estados : 5 %>
+    <%= f.range_field :n_estados, in: 0..tope_estados %>
+    <%= button_to_function "Duplicar Rango", "var max = $('#visita_diaria_n_estados').attr('max');$('#visita_diaria_n_estados').attr('max', max * 2)", "data-inline" => :true %>
   </div>
   <div data-role="fieldcontain">
     <%= f.label :n_edictos, "Edictos" %><br />
-    <%= f.range_field :n_edictos, in: 0..50 %>
+    <% tope_edictos = @visita_diaria.n_edictos > 5 ? @visita_diaria.n_edictos : 5 %>
+    <%= f.range_field :n_edictos, in: 0..tope_edictos %>
+    <%= button_to_function "Duplicar Rango", "var max = $('#visita_diaria_n_edictos').attr('max');$('#visita_diaria_n_edictos').attr('max', max * 2)", "data-inline" => :true %>
+
   </div>
   <div data-role="fieldcontain">
     <%= f.label :n_traslados, "Traslados" %><br />
-    <%= f.range_field :n_traslados, in: 0..50 %>
+    <% tope_traslados = @visita_diaria.n_traslados > 5 ? @visita_diaria.n_traslados : 5 %>
+    <%= f.range_field :n_traslados, in: 0..tope_traslados %>
+    <%= button_to_function "Duplicar Rango", "var max = $('#visita_diaria_n_traslados').attr('max');$('#visita_diaria_n_traslados').attr('max', max * 2)", "data-inline" => :true %>
+
   </div>
   <div data-role="fieldcontain">
   	<fieldset data-role="controlgroup">
