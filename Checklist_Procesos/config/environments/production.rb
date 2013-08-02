@@ -30,7 +30,7 @@ ChecklistProcesos::Application.configure do
   # config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect' # for nginx
 
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
-  # config.force_ssl = true
+  config.force_ssl = true
 
   # See everything in the log (default is :info)
   # config.log_level = :debug
@@ -67,4 +67,18 @@ ChecklistProcesos::Application.configure do
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
   config.eager_load = true
+  #Configurar ActionMailer para enviar correos
+  config.action_mailer.default_url_options = { :host => 'checklistprocesos.herokuapp.com', protocol: 'https' }
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.default :charset => "utf-8"
+  config.action_mailer.smtp_settings = { 
+    :address   => "smtp.mandrillapp.com",
+    :port      => 587, # ports 587 and 2525 are also supported with STARTTLS
+    :enable_starttls_auto => true, # detects and uses STARTTLS
+    :user_name => ENV["MANDRILL_USER"],
+    :password  => ENV["MANDRILL_PASSWORD"], # SMTP password is any valid API key
+    :authentication => 'login', # Mandrill supports 'plain' or 'login'
+    :domain => 'checklistprocesos.herokuapp.com', # your domain to identify your server when connecting
+  }
 end
