@@ -1,0 +1,8 @@
+<% provide :header_title, "Rondas" %>
+<% provide :header_right, link_to('Agregar', new_ronda_path, "data-icon" => :plus, class: "ui-btn-right") %>
+
+<ul data-role="listview">
+<% @rondas.each do |ronda| %>
+    <li><%= link_to "#{ronda.fecha} por #{ronda.usuario.email}", ronda %></li>
+<% end %>
+</ul>

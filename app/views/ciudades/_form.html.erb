@@ -1,0 +1,26 @@
+<%= form_for(@ciudad) do |f| %>
+  <% if @ciudad.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@ciudad.errors.count, "error") %> no dejaron guardar la ciudad:</h2>
+
+      <ul>
+      <% @ciudad.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div data-role="fieldcontain" class="ui-hide-label">
+    <%= f.label :nombre %><br />
+    <%= f.text_field :nombre, placeholder: "Nombre" %>
+  </div>
+  <div data-role="fieldcontain" class="ui-hide-label">
+    <%= f.label :departamento %><br />
+    <%= f.text_field :departamento, placeholder: "Departamento" %>
+  </div>
+  
+  <div class="actions">
+    <%= f.submit "Aceptar" %>
+  </div>
+<% end %>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ChecklistProcesos</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.css" />
+  <script src="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+</head>
+<body>
+	<div data-role="page" >
+		<div data-role="header">
+			<%= yield :header_left %>
+			<h1><%= yield :header_title %></h1>
+			<%= yield :header_right %>
+		</div>
+		<p class="notice"><%= notice %></p>
+		<p class="alert"><%= alert %></p>
+		
+		<%= yield %>
+		
+		<div data-role="footer" data-position="fixed">
+			<% if usuario_signed_in? %>
+				<div data-role="navbar">
+					<ul>
+						<li><%= link_to "Rondas", rondas_path, class: menuseleccionado == :rondas ? ' ui-btn-active ui-state-persist' : '' %></li>
+						<li><%= link_to "Juzgados", juzgados_path, class: menuseleccionado == :juzgados ? ' ui-btn-active ui-state-persist' : '' %></li>
+						<li><%= link_to "Ciudades", ciudades_path, class: menuseleccionado == :ciudades ? ' ui-btn-active ui-state-persist' : '' %></li>
+						<li><%= link_to "Salir", destroy_usuario_session_path, method: :delete %></li>
+					</ul>
+				</div>
+			<% else %>
+				<%= link_to "Iniciar Sesión", new_usuario_session_path, "data-role" => :button %>
+			<% end %>
+		</div>
+	</div>
+</body>
+</html>

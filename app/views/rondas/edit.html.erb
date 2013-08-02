@@ -1,0 +1,7 @@
+<% provide :header_left, link_to('Atrás', rondas_path) %>
+<% provide :header_title, "Editar Ronda"%>
+<% provide :header_right, link_to('Ver', @ronda) %>
+
+<%= render 'form' %>
+
+<%= link_to 'Eliminar', @ronda, method: :delete, "data-role" => :button, "data-icon" => :delete, data: { confirm: '¿Seguro que desea borrar la ronda?' } %>

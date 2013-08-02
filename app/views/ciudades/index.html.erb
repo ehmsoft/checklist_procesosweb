@@ -1,0 +1,11 @@
+<% provide :header_title, "Ciudades" %>
+<% provide :header_right, link_to('Agregar', new_ciudad_path, "data-icon" => :plus, class: "ui-btn-right") %>
+
+<ul data-role="listview">
+<% @ciudades.each do |ciudad| %>
+    <li><%= link_to "#{ciudad.nombre}, #{ciudad.departamento}", ciudad %></li>
+<% end %>
+</ul>
+
+
+

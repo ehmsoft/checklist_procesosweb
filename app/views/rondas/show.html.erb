@@ -1,0 +1,26 @@
+<% provide :header_left, link_to('Atrás', rondas_path) %>
+<% provide :header_title, "Ver Ronda"%>
+<% provide :header_right, link_to('Editar', edit_ronda_path(@ronda)) %>
+<ul data-role="listview" data-inset="true" >
+	<li>
+	  <b>Fecha:</b>
+	  <%= @ronda.fecha %>
+	</li>
+	
+	<li>
+	  <b>Usuario:</b>
+	  <%= @ronda.usuario.email %>
+	</li>
+</ul>
+<hr />
+<% if @ronda.visita_diarias.any? %>
+	<h3>Visitas</h3>
+	<ul data-role="listview" data-inset="true" >
+	<% @ronda.visita_diarias.each do |v| %>
+		<li><%= link_to v.juzgado.nombre_completo, ronda_visita_diaria_path(@ronda, v) %></li>
+	<% end %>
+	</ul>
+<% end %>
+
+<%= link_to 'Nueva Visita', new_ronda_visita_diaria_path(@ronda), "data-role" => :button %>
+
