@@ -1,9 +1,0 @@
-<% provide :header_title, "Juzgados" %>
-<% provide :header_right, link_to('Agregar', new_juzgado_path, "data-icon" => :plus, class: "ui-btn-right") %>
-
-<ul data-role="listview">
-<% @juzgados.each do |juzgado| %>
-    <li><%= link_to juzgado.nombre_completo, juzgado %></li>
-<% end %>
-</ul>
-

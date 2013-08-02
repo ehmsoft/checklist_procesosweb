@@ -1,7 +1,0 @@
-<% provide :header_left, link_to('Atrás', ciudades_path) %>
-<% provide :header_title, "Editar Ciudad"%>
-<% provide :header_right, link_to('Ver', @ciudad) %>
-
-<%= render 'form' %>
-
-<%= link_to 'Eliminar', @ciudad, method: :delete, "data-role" => :button, "data-icon" => :delete, data: { confirm: '¿Segurito segurito?' } %>

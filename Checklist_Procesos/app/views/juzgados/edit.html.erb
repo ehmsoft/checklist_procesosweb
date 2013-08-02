@@ -1,7 +1,0 @@
-<% provide :header_left, link_to('Atrás', juzgados_path) %>
-<% provide :header_title, "Editar Juzgado"%>
-<% provide :header_right, link_to('Ver', @juzgado) %>
-
-<%= render 'form' %>
-
-<%= link_to 'Eliminar', @juzgado, method: :delete, "data-role" => :button, "data-icon" => :delete, data: { confirm: '¿Segurito segurito?' } %>
